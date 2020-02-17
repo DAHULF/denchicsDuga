@@ -1,0 +1,46 @@
+@import "header.css" screen;
+@import "wrapper.css" screen;
+@import "item.css" screen;
+
+@font-face {
+  font-family: azoft-sans;
+  src: url(/fonts/azoftsansbold.ttf);
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: azoft-sans;
+}
+
+.content {
+  z-index: 10;
+}
+.maps-name {
+  text-align: center;
+}
+footer {
+  background-color: #242424;
+  height: 100px;
+}
+.mainMap {
+  margin-bottom: 0px;
+}
+
+.footerPhone {
+  position: relative;
+  margin-top: 65px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  color: #fff;
+  float: right;
+}
+.adminBox {
+  background-color: #272727;
+  margin-top: 30px;
+  float: right;
+  width: 40px;
+  height: 40px;
+}
