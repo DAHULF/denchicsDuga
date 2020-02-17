@@ -1,0 +1,95 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.nPhone {
+  position: relative;
+  margin-top: 2px;
+  font-family: azoft-sans;
+}
+
+.name {
+  margin-bottom: 0; 
+}
+
+.BG {
+  position: absolute;
+  z-index: 4;
+}
+
+.one-bg {
+  position: relative;
+  top: -100px;
+  right: 20px;
+}
+
+.two-bg {
+  position: relative;
+  top: 120px;
+  right: 30px;
+}
+
+.three-bg {
+  position: relative;
+  top: -133px;
+}
+
+.four-bg {
+  position: relative;
+  top: 100px;
+}
+
+.five-bg {
+  position: relative;
+  top: -120px;
+  right: 30px;
+}
+
+.six-bg {
+  position: relative;
+  top: 100px;
+  right: -20px;
+}
+
+.BB {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  filter: blur(2px);
+}
+
+.one-bb {
+  position: relative;
+}
+
+.two-bb {
+  position: relative;
+    top: -120px;
+    left: 50px;
+}
+
+.three-bb {
+  position: relative;
+    right: 30px;
+    top: 180px;
+}
+
+.four-bb {
+  position: relative;
+  top: -110px;
+  left: 170px;
+}
+
+.five-bb {
+  position: relative;
+  top: 90px;
+}
+
+.six-bb {
+  position: relative;
+  left: 50px;
+  top: 80px;
+}
