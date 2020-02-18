@@ -1,0 +1,73 @@
+.btn {
+  border: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 120px;
+  height: 40px;
+  font-size: 15px;
+  outline: none;
+  text-decoration: none;
+}
+.delete-item {
+  border-radius: 0 0 20px 0;
+  position: relative;
+  float: right;
+  left: 240px;
+  background-color: #cf1111;
+  color:white;
+}
+.delete-item:hover {
+  background-color: #ee3434;
+}
+.delete-item:active {
+  background-color: white;
+}
+.edit-item {
+  border-radius: 0 0 0 20px;
+  position: relative;
+  float: right;
+  left: 120px;
+  top: 80px;
+  background-color: #1971ff;
+  color: white;
+}
+.edit-item:hover {
+  background-color: #5a98fc;
+  color: white;
+}
+.edit-item:active {
+  background-color: white;
+}
+form {
+  border-width: 0 0 3px 0;
+  border-color: black;
+  border-style: solid;
+  height: 300px;
+}
+.file-item {
+  position: relative;
+  margin: 0px;
+  display: flex;  
+  background-color: antiquewhite;
+  height: 30px;
+  width: 196px;
+}
+.txt-item {
+  margin: 0px;
+  position: relative;
+  float: left;
+  border: 1px solid black;
+  height: 36px;
+}
+.description-item {
+  border:0;
+  background-color: wheat;
+  float: right;
+  height: 100%;
+  width: 800px;
+}
+.txt-price {
+  width: 50px;
+}
+.btn-submit {
+  float: right;
+}
