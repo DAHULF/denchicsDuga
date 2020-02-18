@@ -24,7 +24,23 @@
 
     if(!$goods_data_problem){
         
-        $query = "SELECT goods_data.good_name, goods_data.good_price, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id)";
+        $orderCommand;
+        
+        if($sortId == 3){
+            
+            $orderCommand = "good_name ASC";
+            
+        }else if($sortId == 2){
+            
+            $orderCommand = "good_attendance DESC";
+            
+        }else{
+            
+            $orderCommand = "good_id DESC";
+            
+        }
+        
+        $query = "SELECT goods_data.good_name, goods_data.good_price, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id) ORDER BY {$orderCommand}";
         
         $goodsData = mysqli_query($connect, $query) or $goods_data_problem = true;
         
@@ -37,10 +53,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 	<link rel="stylesheet" href="style/style.css">
+    
 	<title>Document</title>
+    
 </head>
 <body>
 
