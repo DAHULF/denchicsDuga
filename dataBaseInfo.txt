@@ -1,0 +1,36 @@
+CREATE DATABASE workPolygon;
+
+CREATE USER 'adminsUser' IDENTIFIED BY 'adminPassword';
+GRANT SELECT,INSERT,UPDATE,DELETE ON workPolygon.* TO 'adminUser';
+
+USE workPolygon;
+
+CREATE TABLE goods_data(
+
+	good_id INT AUTO_INCREMENT NOT NULL,
+    good_name VARCHAR(80) NOT NULL,
+    good_opisation VARCHAR(300) NOT NULL,
+    good_price INT NOT NULL,
+    good_attendance INT NOT NULL DEFAULT 0,
+    is_good_aviable INT NOT NULL DEFAULT 1,
+    
+    PRIMARY KEY(good_id)
+
+);
+
+CREATE TABLE goods_images(
+
+	image_id INT AUTO_INCREMENT NOT NULL,
+    goods_id INT NOT NULL,
+    image_way VARCHAR(60) NOT NULL,
+    goods_avatar INT NOT NULL DEFAULT 0,
+    
+    PRIMARY KEY(image_id),
+    FOREIGN KEY (goods_id) REFERENCES goods_data(good_id)
+);
+
+
+SELECT goods_data.good_name, goods_data.good_price, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id);
+
+INSERT INTO goods_data(good_name, good_opisation, good_price) VALUES('Носки', 'Носки как носки, тут даже блять описывать нечего особо то', 200);
+INSERT INTO goods_images(goods_id, image_way) VALUES(1, 'fourBB.jpg');
