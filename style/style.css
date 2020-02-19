@@ -14,7 +14,7 @@ body {
   box-shadow: 0 0 1000px black;
 }
 .two-block {
-  background-image: url(../img/flowerBG.jpg );
+  background-image: url(../img/flowerBG.jpg);
   background-size: 1000px;
 }
 .block {
@@ -98,4 +98,72 @@ background-color: white;
 .password {
   margin: 0;
   height: 35px;
+}
+#block-for-slider {
+    width: 600px;
+    float: right;
+    
+}
+#viewport {
+  border-radius:30px 0 0 0px;
+  width: 100%;
+  height: 600px;
+  top: -5vh;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 1px 1px 100px black;
+}
+#slidewrapper {
+  position: relative;
+  width: calc(100% * 100);
+  transition: 1s;
+  transition-timing-function: cubic-bezier(.67,.01,.23,1);
+}
+#slidewrapper, #slidewrapper ul, #slidewrapper li {
+  margin: 0;
+  padding: 0;
+  height: 600px;
+}
+.slide {
+  width: 600px;
+  list-style: none;
+  float: left;
+}
+#prev-btn, #next-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: calc(50% - 25px);
+}
+#prev-btn:hover, #next-btn:hover {
+  cursor: pointer;
+}
+#prev-btn {
+  left: 20px;
+}
+#next-btn {
+  right: 20px;
+}
+#nav-btns {
+  position: relative    ;
+  width: 100%;
+  bottom: 20px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.slide-nav-btn {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 3px;
+}
+.slide-nav-btn:hover {
+  cursor: pointer;
 }
