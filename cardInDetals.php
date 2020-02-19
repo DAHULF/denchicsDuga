@@ -1,3 +1,54 @@
+<?php
+
+    error_reporting(0);
+
+    $good_id;
+
+    if(empty($_GET['good_id'])){
+        
+        //header('Location: index.php'); это потом срочно раскомментировать
+        
+        $good_id = 1; //а это потом срочно закомментировать
+        
+    }else{
+        
+        $good_id = $_GET['good_id'];
+        
+    }
+
+    $data_base_problem = false;
+
+    require('data_base_confings.php');
+
+    $connect = mysqli_connect(DATA_BASE_HOST, DATA_BASE_USER, DATA_BASE_PASSWORD, DATA_BASE_NAME);
+
+    $goodData;
+    $goodImages;
+
+    if(!$data_base_problem){
+        
+        $query = "SELECT good_name, good_opisation, good_price, good_attendance, is_good_aviable FROM goods_data WHERE good_id = {$good_id}";
+        
+        $result = mysqli_query($connect, $query) or $data_base_problem = true;
+        
+        $goodData = mysqli_fetch_array($result);
+        
+        $newAttendance = $goodData['good_attendance'] + 1;
+        
+        $query = "UPDATE goods_data SET good_attendance = {$newAttendance} WHERE good_id = {$good_id}";
+        
+        $result = mysqli_query($connect, $query) or $data_base_problem = true;
+        
+        $query = "SELECT image_way FROM goods_images WHERE goods_id = {$good_id} ORDER BY goods_avatar DESC";
+        
+        $goodImages = mysqli_query($connect, $query) or $data_base_problem = true;
+        
+    }
+
+    mysqli_close($connect);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
