@@ -1,5 +1,7 @@
 ﻿<?php
-		error_reporting(0);
+		
+    error_reporting(0);
+
     $sortId = 1;
     
     if(!empty($_GET['sort_id'])){
@@ -40,7 +42,7 @@
             
         }
         
-        $query = "SELECT goods_data.good_name, goods_data.good_price, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id) ORDER BY {$orderCommand}";
+        $query = "SELECT goods_data.good_id, goods_data.good_name, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id) ORDER BY {$orderCommand}";
         
         $goodsData = mysqli_query($connect, $query) or $goods_data_problem = true;
         
@@ -99,14 +101,50 @@
 							<button class="itemBtn-popular btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=2"; ?>'">популярное</button>
 							<button class="itemBtn-premium btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=3"; ?>'">по алфавиту</button>
 						</div>
-						<h1 class="error">ошибка, товары не найдены</h1> <!--чтоб высветить убери 84 строку в style.css!-->
-						<div class="card-item">
-							<img src="img/fiveBG.jpg" class="item-img">
-							<div class="margin-item">
-								<a href="#"><button class="btn-item">подробнее</button></a>
-								<h2 class="item-name">тест</h2>
+                        <?php
+                        
+                            $row = mysqli_fetch_array($goodsData);
+                        
+                            if($goods_data_problem || !$row){
+                                
+                                echo "<h1 class='error'>ошибка, товары не найдены</h1>";
+                                
+                            }else{
+                                
+                                echo "<div class='card-item'>";
+                                echo "<img src='{$row['image_way']}' class='item-img'>";
+                                echo "<div class='margin-item'>";
+                                echo "<a href='cardInDetals.php?good_id={$row['good_id']}'><button class='btn-item'>подробнее</button></a>";
+                                echo "<h2 class='item-name'>{$row['good_name']}</h2>";
+                                echo "</div>";
+                                echo "</div>";
+                                
+                                while($row = mysqli_fetch_array($goodsData)){
+                                    
+                                    echo "<div class='card-item'>";
+                                    echo "<img src='{$row['image_way']}' class='item-img'>";
+                                    echo "<div class='margin-item'>";
+                                    echo "<a href='cardInDetals.php?good_id={$row['good_id']}'><button class='btn-item'>подробнее</button></a>";
+                                    echo "<h2 class='item-name'>{$row['good_name']}</h2>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    
+                                }
+                                
+                            }
+                        
+                        ?>
+						 
+                        
+						<!-- <div class='card-item'>
+							<img src='img/fiveBG.jpg' class='item-img'>
+							<div class='margin-item'>
+								<a href='#'><button class='btn-item'>подробнее</button></a>
+								<h2 class='item-name'>тест</h2>
 							</div>
-						</div>	
+						</div> -->
+                        
+                        
 					</div>
 				</div>
 				</div>
