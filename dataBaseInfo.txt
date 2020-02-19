@@ -1,7 +1,7 @@
 CREATE DATABASE workPolygon;
 
 CREATE USER 'adminsUser' IDENTIFIED BY 'adminPassword';
-GRANT SELECT,INSERT,UPDATE,DELETE ON workPolygon.* TO 'adminUser';
+GRANT SELECT,INSERT,UPDATE,DELETE ON workPolygon.* TO 'adminsUser';
 
 USE workPolygon;
 
@@ -32,5 +32,10 @@ CREATE TABLE goods_images(
 
 SELECT goods_data.good_name, goods_data.good_price, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id);
 
-INSERT INTO goods_data(good_name, good_opisation, good_price) VALUES('Носки', 'Носки как носки, тут даже блять описывать нечего особо то', 200);
+UPDATE goods_images SET image_way = 'img/fourBB.jpg' WHERE image_id = 3;
+
+INSERT INTO goods_data(good_name, good_opisation, good_price, good_attendance) VALUES('Водка', 'Водка пива, водка пиво, под конеч корпаратива', 170, 300);
 INSERT INTO goods_images(goods_id, image_way) VALUES(1, 'fourBB.jpg');
+
+SELECT * FROM goods_data;
+SELECT * FROM goods_images;
