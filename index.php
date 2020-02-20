@@ -93,7 +93,7 @@
 		</div>
 		<h1 class="whatSelling white">что мы продаем</h1>
 		<div class="two-block">
-			<div class="block border-wrapper">
+			<div class=" border-wrapper">
 				<div class="wrapper">
 					<div class="cards" overflow-y:scroll>
 						<div class="state">
@@ -136,16 +136,15 @@
                         ?>
 						 
                         
-						<!-- <div class='card-item'>
-							<img src='img/fiveBG.jpg' class='item-img'>
-							<div class='margin-item'>
-								<a href='#'><button class='btn-item'>подробнее</button></a>
+							<div class='card-item'>
+								<img src='img/fiveBG.jpg' class='item-img'>
+								<div class='margin-item'>
 								<h2 class='item-name'>тест</h2>
-							</div>
-						</div> -->
-                        
-                        
-					</div>
+								<div class="item-descriprion">dssdsdsdodsjsisdids</div>
+								<h3 class="item-price">400</h3>
+						
+								</div>
+            </div>
 				</div>
 				</div>
 		<div class="two-block">

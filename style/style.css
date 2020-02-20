@@ -1,7 +1,7 @@
 @import "header.css" screen;
 @import "wrapper.css" screen;
 @import "item.css" screen;
-
+@import url('https://fonts.googleapis.com/css?family=Numans&display=swap');
 body {
   scroll-behavior: smooth;
   margin: 0;
@@ -15,7 +15,7 @@ body {
 }
 .two-block {
   background-image: url(../img/flowerBG.jpg);
-  background-size: 1000px;
+  background-size:100%;
 }
 .block {
   margin-top: 0px;
@@ -24,17 +24,16 @@ body {
   background-color: #fff;
 }
 h1 {
-  font-family: sans-serif;
+  font-family: 'Numans', sans-serif;
 }
 .content {
   z-index: 10;
-}
-.map-name {
 }
 .map-name-block {
   margin-top: 40px;
   background-color: white;
   height: 100px;
+  margin-top:-50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,9 +69,6 @@ footer {
   float: right;
   width: 40px;
   height: 40px;
-}
-.border-wrapper {
-  border-radius: 0 0 20px 20px;
 }
 .error {
   color: #be0303;
@@ -166,4 +162,7 @@ background-color: white;
 }
 .slide-nav-btn:hover {
   cursor: pointer;
+}
+.card-item {
+  font-family: 'Numans', sans-serif;
 }

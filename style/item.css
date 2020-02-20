@@ -1,50 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Play&display=swap');
 .cards {
-  border-radius: 30px 0px 0px 30px;
-  overflow-y: scroll
+  overflow-y: scroll;
 }
 .card-item {
-  border-radius: 20px;
-  box-shadow: 0px 50px 90px black;
+  position: relative;
+  box-shadow: 0px 50px 120px black;
   margin-top: 20px;
   margin-left: 100px;
+  background-color: white;
   margin-bottom: 30px;
   float: left;
-  width: 350px;
+  width: 284.2px;
   height: 430px;
 }
-.item-name {
-  font-size: 23px;
-  float: left;
-  margin-left: 20px;
-  margin-top: 30px;
-  font-family: sans-serif;
+.item-name {  
+  margin-left: 4px;
+  font-size: 30px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
-.btn-item {
-  border: 0px;
-  outline: none;
-  height: 40px;
-  position: relative;
-  float: right;
-  color: white;
-  font-size: 18px;
-  margin: 0px;
-  width: 100%;
-  background-color: #16737a;
-}
-.btn-item:hover {
-  background-color: #3ab2bb;
-}
-
-.item-img {
-  margin: 0px;
+.item-descriprion {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-left: 4px;
+  font-family: 'Play', sans-serif;
 }
 .state {
   position: relative;
   left: 30px;
 }
+.item-price {
+  float: right;
+  font-family: 'Numans', sans-serif;
+  position: absolute;
+  font-size: 30px;
+  margin-bottom: 0px;
+  bottom: 10px;
+  right: 10px;
+}
 .item-img {
+  margin: 5px;
   margin-bottom: -4px;
-  width: 100%; 
-  height: 300px;
-  border-radius: 10px 10px 0 0 ;
+  width: 273.2px; 
+  height: 204.8px;
 }
