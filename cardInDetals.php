@@ -4,19 +4,18 @@
 
     $good_id;
 
+    $data_base_problem = false;
+    $good_id_problem = false;
+
     if(empty($_GET['good_id'])){
         
-        //header('Location: index.php'); это потом срочно раскомментировать
-        
-        $good_id = 1; //а это потом срочно закомментировать
+        $good_id_problem = true;
         
     }else{
         
         $good_id = $_GET['good_id'];
         
     }
-
-    $data_base_problem = false;
 
     require('data_base_confings.php');
 
