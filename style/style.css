@@ -166,3 +166,7 @@ background-color: white;
 .card-item {
   font-family: 'Numans', sans-serif;
 }
+
+.slider {
+  position: absolute;
+}

@@ -60,7 +60,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 	<link rel="stylesheet" href="style/style.css">
-    
+  <link rel="stylesheet" href="owl.carousel.min.css">
 	<title>Document</title>
     
 </head>
@@ -137,11 +137,20 @@
 						 
                         
 							<div class='card-item'>
-								<img src='img/fiveBG.jpg' class='item-img'>
+							<div class="owl-carousel owl-theme owl-close item-img">
+								<img src="img/oneBB.jpg" class='item-img'>
+								<img src="img/twoBB.jpg" class='item-img'>
+								<img src="img/threeBB.jpg" class='item-img'>
+								<img src="img/fourBB.jpg" class='item-img'>
+								<img src="img/fiveBB.jpg" class='item-img'> 
+								<img src="img/sixBB.jpg" class='item-img'>
+				</div>
 								<div class='margin-item'>
 								<h2 class='item-name'>тест</h2>
-								<div class="item-descriprion">dssdsdsdodsjsisdids</div>
-								<h3 class="item-price">400</h3>
+								<p class="item-descriprion">
+								dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
+								</p>
+								<h3 class="item-price">400р</h3>
 						
 								</div>
             </div>
@@ -159,6 +168,7 @@
 			<p class="nPhone footerPhone">контакты<br>+7 (904) 214-82-18</p>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="owl.carousel.min.js"></script>
 		<script src="javascript.js"></script>
 </body>
 </html>
