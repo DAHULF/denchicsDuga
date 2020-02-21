@@ -60,7 +60,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 	<link rel="stylesheet" href="style/style.css">
-    
+  <link rel="stylesheet" href="owl.carousel.min.css">
 	<title>Document</title>
     
 </head>
@@ -93,7 +93,7 @@
 		</div>
 		<h1 class="whatSelling white">что мы продаем</h1>
 		<div class="two-block">
-			<div class="block border-wrapper">
+			<div class=" border-wrapper">
 				<div class="wrapper">
 					<div class="cards" overflow-y:scroll>
 						<div class="state">
@@ -136,16 +136,24 @@
                         ?>
 						 
                         
-						<!-- <div class='card-item'>
-							<img src='img/fiveBG.jpg' class='item-img'>
-							<div class='margin-item'>
-								<a href='#'><button class='btn-item'>подробнее</button></a>
+							<div class='card-item'>
+							<div class="owl-carousel owl-theme owl-close item-img">
+								<img src="img/oneBB.jpg" class='item-img'>
+								<img src="img/twoBB.jpg" class='item-img'>
+								<img src="img/threeBB.jpg" class='item-img'>
+								<img src="img/fourBB.jpg" class='item-img'>
+								<img src="img/fiveBB.jpg" class='item-img'> 
+								<img src="img/sixBB.jpg" class='item-img'>
+				</div>
+								<div class='margin-item'>
 								<h2 class='item-name'>тест</h2>
-							</div>
-						</div> -->
-                        
-                        
-					</div>
+								<p class="item-descriprion">
+								dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
+								</p>
+								<h3 class="item-price">400р</h3>
+						
+								</div>
+            </div>
 				</div>
 				</div>
 		<div class="two-block">
@@ -156,10 +164,12 @@
 			<iframe class="mainMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.651178783211!2d39.309211654928504!3d51.73941519012627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x413b244fb6eedd31%3A0xef6eb1901cff5a3d!2z0YPQuy4g0KTRkdC00L7RgNCwINCi0Y7RgtGH0LXQstCwLCA5NdCcLCDQktC-0YDQvtC90LXQtiwg0JLQvtGA0L7QvdC10LbRgdC60LDRjyDQvtCx0LsuLCAzOTQwNTA!5e0!3m2!1sru!2sru!4v1581964101336!5m2!1sru!2sru" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 		</div>
 		<footer>
-			<a href="admin.htm"><div class="adminBox"></div></a>
-			<p class="nPhone footerPhone">контакты<br>+7 (904) 214-82-18</p>
+			<p class="nPhone footerPhone">контакты
+			<br><a class="vk-href" href="https://vk.com/club132873597">группа вконтакте</a>
+			<br>+7 (904) 214-82-18</p>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="owl.carousel.min.js"></script>
 		<script src="javascript.js"></script>
 </body>
 </html>
