@@ -14,7 +14,8 @@
   width: 284px;
   height: 430px;
 }
-.item-name {  
+.item-name {
+  font-family: 'Human', sans-serif;  
   margin-left: 4px;
   font-size: 30px;
   margin-top: 4px;
@@ -44,6 +45,7 @@
 .item-img {
   margin-top: 5px;
   margin-left: 4px;
+  margin-right: 4px;
   margin-bottom: -5px;
   width: 273.2px; 
   height: 204.8px;
