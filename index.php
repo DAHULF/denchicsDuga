@@ -122,7 +122,7 @@
                                     
                                     echo "<div class='card-item'>";
                                     echo "<img src='{$row['image_way']}' class='item-img'>";
-                                    echo "<div class='margin-item'>";
+                                    echo "<div class='body-item'>";
                                     echo "<a href='cardInDetals.php?good_id={$row['good_id']}'><button class='btn-item'>подробнее</button></a>";
                                     echo "<h2 class='item-name'>{$row['good_name']}</h2>";
                                     echo "</div>";
@@ -143,14 +143,13 @@
 								<img src="img/fourBB.jpg" class='item-img'>
 								<img src="img/fiveBB.jpg" class='item-img'> 
 								<img src="img/sixBB.jpg" class='item-img'>
-				</div>
-								<div class='margin-item'>
+							</div>
+								<div class='body-item'>
 								<h2 class='item-name'>тест</h2>
-								<p class="item-descriprion">
+								<p class="item-descriprion"></p>
 								dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
 								</p>
 								<h3 class="item-price">400р</h3>
-						
 								</div>
             </div>
 				</div>
@@ -169,7 +168,7 @@
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="owl.carousel.min.js"></script>
-		<script src="javascript.js"></script>
+		<script src="scroll.js"></script>
 </body>
 </html>
 

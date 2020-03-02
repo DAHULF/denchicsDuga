@@ -57,13 +57,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/admin.css">
+  <link rel="stylesheet" href="owl.carousel.min.css">
   <link rel="stylesheet" href="style/item.css">
   <link rel="stylesheet" href="style/style.css">
   <title>Document</title>
 </head>
 <body>
 <div class="create-card">
-    
     <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         
       <textarea type="pattern" placeholder="описание" class="description-item" rows="0" maxlength="600"><?php if($exchange_good) echo $good_info['good_opisation']; ?></textarea>
@@ -104,28 +104,33 @@
   </div>
     
   <div class="wrapper">
-    <div class="cards" overflow-y:scroll>
+    <div class="cards">
         <div class='card-item'>
-          <div class='margin-item'>
-          <h2 class='item-name'>тест</h2>
-          <p class="item-descriprion">
-          dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
-          </p>
-          <h3 class="item-price">400р</h3>
-          <div class="delete-item">удалить</div>
-          <div class="edit-item">редактировать</div>
-          </div>
           <div class="owl-carousel owl-theme owl-close item-img">
-          <img src="img/oneBB.jpg" class='item-img'>
-          <img src="img/twoBB.jpg" class='item-img'>
-          <img src="img/threeBB.jpg" class='item-img'>
-          <img src="img/fourBB.jpg" class='item-img'>
-          <img src="img/fiveBB.jpg" class='item-img'> 
-          <img src="img/sixBB.jpg" class='item-img'>
-        </div>
+              <img src="img/oneBB.jpg" class='item-img'>
+              <img src="img/twoBB.jpg" class='item-img'>
+              <img src="img/threeBB.jpg" class='item-img'>
+              <img src="img/fourBB.jpg" class='item-img'>
+              <img src="img/fiveBB.jpg" class='item-img'> 
+              <img src="img/sixBB.jpg" class='item-img'>
+          </div>
+          <div class='margin-item'>
+            <h2 class='item-name'>тест</h2>
+            <div class="editor">
+              <div class="delete-item">удалить</div>
+              <div class="edit-item">редактировать</div>
+            </div>
+            <p class="item-descriprion">
+              dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
+            </p>
+            <h3 class="item-price">400р</h3>
+
+          </div>
       </div>
   </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="owl.carousel.min.js"></script>
   <script src="javascript.js"></script>
 </body>
 </html>
