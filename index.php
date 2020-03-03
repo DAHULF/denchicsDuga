@@ -23,16 +23,13 @@
     $connect = mysqli_connect(DATA_BASE_HOST, DATA_BASE_USER, DATA_BASE_PASSWORD, DATA_BASE_NAME) or $goods_data_problem = true;
 
     $goodsData;
+    $goodsImages;
 
     if(!$goods_data_problem){
         
         $orderCommand;
         
-        if($sortId == 3){
-            
-            $orderCommand = "good_name ASC";
-            
-        }else if($sortId == 2){
+        if($sortId == 2){
             
             $orderCommand = "good_attendance DESC";
             
@@ -42,13 +39,13 @@
             
         }
         
-        $query = "SELECT goods_data.good_id, goods_data.good_name, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id) ORDER BY {$orderCommand}";
+        $query = "SELECT good_id, good_name, good_opisation, good_price, is_good_aviable FROM goods_data ORDER BY {$orderCommand}";
         
         $goodsData = mysqli_query($connect, $query) or $goods_data_problem = true;
         
     }
 
-    mysqli_close($connect);
+    
 
 ?>
 
@@ -96,13 +93,19 @@
 				<div class="wrapper">
 					<div class="cards" overflow-y:scroll>
 						<div class="state">
+                            
 							<button class="itemBtn-news btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=1"; ?>'">новинки</button>
-							<button class="itemBtn-popular btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=2"; ?>'">популярное</button>
+                            
 							<button class="itemBtn-premium btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=3"; ?>'">по алфавиту</button>
+                            
 						</div>
                         <?php
                         
                             $row = mysqli_fetch_array($goodsData);
+                        
+                            $query = "SELECT image_way FROM goods_images WHERE goods_id={$row['good_id']}";
+                            
+                            $goodsImages = mysqli_query($connect, $query);
                         
                             if($goods_data_problem || !$row){
                                 
@@ -111,20 +114,46 @@
                             }else{
                                 
                                 echo "<div class='card-item'>";
-                                echo "<img src='{$row['image_way']}' class='item-img'>";
-                                echo "<div class='margin-item'>";
-                                echo "<a href='cardInDetals.php?good_id={$row['good_id']}'><button class='btn-item'>подробнее</button></a>";
+                                echo "<div class='owl-carousel owl-theme owl-close item-img'>";
+                                
+                                while($rowImg = mysqli_fetch_array($goodsImages)){
+                                    
+                                    echo "<img src='{$rowImg['image_way']}' class='item-img'>";
+                                    
+                                }
+                                
+                                echo "</div>";
+                                echo "<div class='body-item'>";
                                 echo "<h2 class='item-name'>{$row['good_name']}</h2>";
+                                echo "<p class='item-descriprion'></p>";
+                                echo $row['good_opisation'];
+                                echo "</p>";
+                                echo "<h3 class='item-price'>{$row['good_price']}р</h3>";
                                 echo "</div>";
                                 echo "</div>";
                                 
                                 while($row = mysqli_fetch_array($goodsData)){
                                     
+                                    $query = "SELECT image_way FROM goods_images WHERE goods_id={$row['good_id']}";
+                            
+                                    $goodsImages = mysqli_query($connect, $query);
+                                    
                                     echo "<div class='card-item'>";
-                                    echo "<img src='{$row['image_way']}' class='item-img'>";
-                                    echo "<div class='body-item'>";
-                                    echo "<a href='cardInDetals.php?good_id={$row['good_id']}'><button class='btn-item'>подробнее</button></a>";
+                                    echo "<div class='owl-carousel owl-theme owl-close item-img'>";
+                                    
+                                    while($rowImg = mysqli_fetch_array($goodsImages)){
+                                        
+                                        echo "<img src='{$rowImg['image_way']}' class='item-img'>";
+                                        
+                                    }
+                                    
+                                    echo "</div>";
+                                    echo "<div class='margin-item'>";
                                     echo "<h2 class='item-name'>{$row['good_name']}</h2>";
+                                    echo "<p class='item-descriprion'>";
+                                    echo $row['good_opisation'];
+                                    echo "</p>";
+                                    echo "<h3 class='item-price'>{$row['good_price']}р</h3>";
                                     echo "</div>";
                                     echo "</div>";
                                     
@@ -136,22 +165,24 @@
 						 
                         
 							<div class='card-item'>
-							<div class="owl-carousel owl-theme owl-close item-img">
-								<img src="img/oneBB.jpg" class='item-img'>
-								<img src="img/twoBB.jpg" class='item-img'>
-								<img src="img/threeBB.jpg" class='item-img'>
-								<img src="img/fourBB.jpg" class='item-img'>
-								<img src="img/fiveBB.jpg" class='item-img'> 
-								<img src="img/sixBB.jpg" class='item-img'>
-							</div>
-								<div class='body-item'>
-								<h2 class='item-name'>тест</h2>
-								<p class="item-descriprion"></p>
-								dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
-								</p>
-								<h3 class="item-price">400р</h3>
-								</div>
-            </div>
+                                <div class="owl-carousel owl-theme owl-close item-img">
+                                    <img src="img/oneBB.jpg" class='item-img'>
+                                    <img src="img/twoBB.jpg" class='item-img'>
+                                    <img src="img/threeBB.jpg" class='item-img'>
+                                    <img src="img/fourBB.jpg" class='item-img'>
+                                    <img src="img/fiveBB.jpg" class='item-img'> 
+                                    <img src="img/sixBB.jpg" class='item-img'>
+                                </div>
+                                <div class='margin-item'>
+                                  <h2 class='item-name'>тест</h2>
+                                  
+                                  <p class="item-descriprion">
+                                    dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
+                                  </p>
+                                  <h3 class="item-price">400р</h3>
+                        
+                                </div>
+                            </div>
 				</div>
 				</div>
 		<div class="two-block">

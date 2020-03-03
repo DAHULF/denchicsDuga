@@ -6,6 +6,9 @@
 
     $good_info;
     $good_images;
+
+    $goodsData;
+    $goodsImages;
     
     require('data_base_confings.php');
 
@@ -48,6 +51,10 @@
         $good_images = mysqli_query($connect, $query);
         
     }
+
+    $query = "SELECT good_id, good_name, good_opisation, good_price, is_good_aviable FROM goods_data";
+        
+    $goodsData = mysqli_query($connect, $query) or $goods_data_problem = true;
 
 ?>
 
@@ -105,6 +112,40 @@
     
   <div class="wrapper">
     <div class="cards">
+        <?php
+            
+            while($row = mysqli_fetch_array($goodsData)){
+                
+                $query = "SELECT image_way FROM goods_images WHERE goods_id={$row['good_id']}";
+        
+                $goodsImages = mysqli_query($connect, $query);
+                
+                echo "<div class='card-item'>";
+                echo "<div class='owl-carousel owl-theme owl-close item-img'>";
+                
+                while($rowImg = mysqli_fetch_array($goodsImages)){
+                    
+                    echo "<img src='{$rowImg['image_way']}' class='item-img'>";
+                    
+                }
+                
+                echo "</div>";
+                echo "<div class='margin-item'>";
+                echo "<h2 class='item-name'>{$row['good_name']}</h2>";
+                echo "<div class='editor'>";
+                echo "<div class='delete-item'>удалить</div>";
+                echo "<div class='edit-item'>редактировать</div>";
+                echo "</div>";
+                echo "<p class='item-descriprion'>";
+                echo $row['good_opisation'];
+                echo "</p>";
+                echo "<h3 class='item-price'>{$row['good_price']}р</h3>";
+                echo "</div>";
+                echo "</div>";
+                
+            }
+        
+        ?>
         <div class='card-item'>
           <div class="owl-carousel owl-theme owl-close item-img">
               <img src="img/oneBB.jpg" class='item-img'>
