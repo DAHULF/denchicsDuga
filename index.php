@@ -199,6 +199,7 @@
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="owl.carousel.min.js"></script>
+        <script src="javascript.js"></script>
 		<script src="scroll.js"></script>
 </body>
 </html>

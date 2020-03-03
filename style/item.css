@@ -11,7 +11,7 @@
   background-color: white;
   margin-bottom: 30px;
   float: left;
-  width: 284px;
+  width: 274px;
   height: 430px;
 }
 .item-name {
@@ -44,9 +44,6 @@
   right: 10px;
 }
 .item-img {
-  margin-top: 4px;
-  margin-left: 4px;
-  margin-right: 4px;
   margin-bottom: -5px;
   width: 273.2px; 
   height: 204.8px;
