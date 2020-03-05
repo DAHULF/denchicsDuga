@@ -11,6 +11,7 @@
     $goodsData;
     $goodsImages;
 
+    $isAddingOrUpdating = false;
     $addOrUpdateProblem = false;
     $imagesDownloaded = 6;
 
@@ -74,7 +75,11 @@
 
     //POSTS-QUERYS HANDLERS 
 
+    //add if block
+
     if(isset($_POST['createNew'])){
+        
+        $isAddingOrUpdating = true;
         
         $goodName = mysqli_real_escape_string($connect, trim($_POST['goodName']));
         $goodPrice = mysqli_real_escape_string($connect, trim($_POST['goodPrice']));
@@ -129,6 +134,14 @@
             
         }
         
+        echo $imageOneProblem;
+        echo $imageTwoProblem;
+        echo $imageThreeProblem;
+        echo $imageFourProblem;
+        echo $imageFiveProblem;
+        echo $imageSixProblem;
+        echo '</br>';
+        
         if(($_FILES['oneImg']['type'] != 'image/gif') && ($_FILES['oneImg']['type'] != 'image/jpeg') && ($_FILES['oneImg']['type'] != 'image/pjpeg') && ($_FILES['oneImg']['type'] != 'image/png')){
             
             @unlink($_FILES['oneImg']['tmp_name']);
@@ -165,6 +178,13 @@
             $imageSixProblem = true;
             
         }
+        echo $imageOneProblem;
+        echo $imageTwoProblem;
+        echo $imageThreeProblem;
+        echo $imageFourProblem;
+        echo $imageFiveProblem;
+        echo $imageSixProblem;
+        echo '</br>';
         
         if($_FILES['oneImg']['size'] > 1283000){
             
@@ -209,6 +229,14 @@
             
         }
         
+        echo $imageOneProblem;
+        echo $imageTwoProblem;
+        echo $imageThreeProblem;
+        echo $imageFourProblem;
+        echo $imageFiveProblem;
+        echo $imageSixProblem;
+        echo '</br>';
+        
         if($imageOneProblem) $imagesDownloaded--;
         if($imageTwoProblem) $imagesDownloaded--;
         if($imageThreeProblem) $imagesDownloaded--;
@@ -216,11 +244,106 @@
         if($imageFiveProblem) $imagesDownloaded--;
         if($imageSixProblem) $imagesDownloaded--;
         
+        echo $imagesDownloaded;
+        
         if(!$addOrUpdateProblem && ($imagesDownloaded > 2)){
             
             $query = "INSERT INTO goods_data(good_name, good_opisation, good_price) VALUES({$goodName}, {$goodOpisation}, {$goodPrice})";
             
+            $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
+            
+            if(!$addOrUpdateProblem){
+                
+                $newGoodId;
+                
+                $query = "SELECT good_id FROM goods_data";
+                
+                $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
+                
+                while($row = mysqli_fetch_array($result)){
+                    
+                    $newGoodId = $row['good_id'];
+                    
+                }
+                
+                $publicQuery = "INSERT INTO goods_images(goods_id, image_way) VALUES({$newGoodId},";
+                
+                if(!$imageOneProblem){
+                    
+                    $image_way = "img/{$_FILES['oneImg']['name']}";
+                    move_uploaded_file($_FILES['oneImg']['tmp_name'], $image_way) or @unlink($image_way);
+                    
+                    $query = "{$publicQuery} {$image_way})";
+                    
+                    $result = mysqli_query($connect, $query) or @unlink($image_way);
+                    
+                }
+                if(!$imageOneProblem){
+                    
+                    $image_way = "img/{$_FILES['twoImg']['name']}";
+                    move_uploaded_file($_FILES['twoImg']['tmp_name'], $image_way) or @unlink($image_way);
+                    
+                    $query = "{$publicQuery} {$image_way})";
+                    
+                    $result = mysqli_query($connect, $query) or @unlink($image_way);
+                    
+                }
+                if(!$imageOneProblem){
+                    
+                    $image_way = "img/{$_FILES['threeImg']['name']}";
+                    move_uploaded_file($_FILES['threeImg']['tmp_name'], $image_way) or @unlink($image_way);
+                    
+                    $query = "{$publicQuery} {$image_way})";
+                    
+                    $result = mysqli_query($connect, $query) or @unlink($image_way);
+                    
+                }
+                if(!$imageOneProblem){
+                    
+                    $image_way = "img/{$_FILES['fourImg']['name']}";
+                    move_uploaded_file($_FILES['fourImg']['tmp_name'], $image_way) or @unlink($image_way);
+                    
+                    $query = "{$publicQuery} {$image_way})";
+                    
+                    $result = mysqli_query($connect, $query) or @unlink($image_way);
+                    
+                }
+                if(!$imageOneProblem){
+                    
+                    $image_way = "img/{$_FILES['fiveImg']['name']}";
+                    move_uploaded_file($_FILES['fiveImg']['tmp_name'], $image_way) or @unlink($image_way);
+                    
+                    $query = "{$publicQuery} {$image_way})";
+                    
+                    $result = mysqli_query($connect, $query) or @unlink($image_way);
+                    
+                }
+                if(!$imageOneProblem){
+                    
+                    $image_way = "img/{$_FILES['sixImg']['name']}";
+                    move_uploaded_file($_FILES['sixImg']['tmp_name'], $image_way) or @unlink($image_way);
+                    
+                    $query = "{$publicQuery} {$image_way})";
+                    
+                    $result = mysqli_query($connect, $query) or @unlink($image_way);
+                    
+                }
+                
+            }
+            
+        }else{
+            
+            $addOrUpdateProblem = true;
+            
         }
+        
+    }
+
+    //update if block
+
+    if(isset($_POST['changeOld'])){
+        
+        
         
     }
 
@@ -270,6 +393,24 @@
         }
         ?>
       <!-- <input type="submit" class="btn btn-submit" name="createNew" value="создать"/> -->
+        
+      <?php
+        
+        if($isAddingOrUpdating){
+            
+            if($addOrUpdateProblem){
+                
+                echo "Во время добавления товара произошла ошибка";
+                
+            }else{
+                
+                echo "Товар успешно добавлен";
+                
+            }
+            
+        }
+        
+      ?>
       <?php 
         
         if(!$exchange_good){
