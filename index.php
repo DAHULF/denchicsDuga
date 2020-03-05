@@ -31,7 +31,7 @@
         
         if($sortId == 2){
             
-            $orderCommand = "good_attendance DESC";
+            $orderCommand = "good_name ASC";
             
         }else{
             
@@ -96,7 +96,7 @@
                             
 							<button class="itemBtn-news btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=1"; ?>'">новинки</button>
                             
-							<button class="itemBtn-premium btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=3"; ?>'">по алфавиту</button>
+							<button class="itemBtn-premium btn" onclick="location.href='<?php echo "{$_SERVER['PHP_SELF']}?sort_id=2"; ?>'">по алфавиту</button>
                             
 						</div>
                         <?php
