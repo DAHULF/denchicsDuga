@@ -162,27 +162,6 @@
                             }
                         
                         ?>
-						 
-                        
-							<div class='card-item'>
-                                <div class="owl-carousel owl-theme owl-close item-img">
-                                    <img src="img/oneBB.jpg" class='item-img'>
-                                    <img src="img/twoBB.jpg" class='item-img'>
-                                    <img src="img/threeBB.jpg" class='item-img'>
-                                    <img src="img/fourBB.jpg" class='item-img'>
-                                    <img src="img/fiveBB.jpg" class='item-img'> 
-                                    <img src="img/sixBB.jpg" class='item-img'>
-                                </div>
-                                <div class='margin-item'>
-                                  <h2 class='item-name'>тест</h2>
-                                  
-                                  <p class="item-descriprion">
-                                    dssdaasd sadklas dld;jad asdjll;dldjldasjljasdl;djasl
-                                  </p>
-                                  <h3 class="item-price">400р</h3>
-                        
-                                </div>
-                            </div>
 				</div>
 				</div>
 		<div class="two-block">
