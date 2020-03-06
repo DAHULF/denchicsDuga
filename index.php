@@ -39,7 +39,7 @@
             
         }
         
-        $query = "SELECT good_id, good_name, good_opisation, good_price, is_good_aviable FROM goods_data ORDER BY {$orderCommand}";
+        $query = "SELECT good_id, good_name, good_opisation, good_price FROM goods_data WHERE is_good_aviable=1 ORDER BY {$orderCommand}";
         
         $goodsData = mysqli_query($connect, $query) or $goods_data_problem = true;
         

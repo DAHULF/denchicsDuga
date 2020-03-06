@@ -13,20 +13,16 @@
 
     $isAddingOrUpdating = false;
     $addOrUpdateProblem = false;
-    $imagesDownloaded = 6;
-
-    $imageOneProblem = false;
-    $imageTwoProblem = false;
-    $imageThreeProblem = false;
-    $imageFourProblem = false;
-    $imageFiveProblem = false;
-    $imageSixProblem = false;
 
     //data variables
 
     $goodName = '';
     $goodPrice = 0;
     $goodOpisation = '';
+
+    $goodName;
+    $goodPrice;
+    $goodOpisation;
 
     //BASE TURNING ON
     
@@ -53,6 +49,8 @@
     }
 
     if(!empty($_GET['good_id'])){
+        
+        $_SESSION['good_id'] = $_GET['good_id'];
         
         $exchange_good = true;
         
@@ -91,249 +89,20 @@
             
         }
         
-        if(!$_FILES['oneImg']['error']){
+        if(!$addOrUpdateProblem){
             
-            @unlink($_FILES['oneImg']['tmp_name']);
-            
-            $imageOneProblem = true;
-            
-        }
-        if(!$_FILES['twoImg']['error']){
-            
-            @unlink($_FILES['twoImg']['tmp_name']);
-            
-            $imageTwoProblem = true;
-            
-        }
-        if(!$_FILES['threeImg']['error']){
-            
-            @unlink($_FILES['threeImg']['tmp_name']);
-            
-            $imageThreeProblem = true;
-            
-        }
-        if(!$_FILES['fourImg']['error']){
-            
-            @unlink($_FILES['fourImg']['tmp_name']);
-            
-            $imageFourProblem = true;
-            
-        }
-        if(!$_FILES['fiveImg']['error']){
-            
-            @unlink($_FILES['fiveImg']['tmp_name']);
-            
-            $imageFiveProblem = true;
-            
-        }
-        if(!$_FILES['sixImg']['error']){
-            
-            @unlink($_FILES['sixImg']['tmp_name']);
-            
-            $imageSixProblem = true;
-            
-        }
-        
-        echo $imageOneProblem;
-        echo $imageTwoProblem;
-        echo $imageThreeProblem;
-        echo $imageFourProblem;
-        echo $imageFiveProblem;
-        echo $imageSixProblem;
-        echo '</br>';
-        
-        if(($_FILES['oneImg']['type'] != 'image/gif') && ($_FILES['oneImg']['type'] != 'image/jpeg') && ($_FILES['oneImg']['type'] != 'image/pjpeg') && ($_FILES['oneImg']['type'] != 'image/png')){
-            
-            @unlink($_FILES['oneImg']['tmp_name']);
-            $imageOneProblem = true;
-            
-        }
-        if(($_FILES['twoImg']['type'] != 'image/gif') && ($_FILES['twoImg']['type'] != 'image/jpeg') && ($_FILES['twoImg']['type'] != 'image/pjpeg') && ($_FILES['twoImg']['type'] != 'image/png')){
-            
-            @unlink($_FILES['twoImg']['tmp_name']);
-            $imageTwoProblem = true;
-            
-        }
-        if(($_FILES['threeImg']['type'] != 'image/gif') && ($_FILES['threeImg']['type'] != 'image/jpeg') && ($_FILES['threeImg']['type'] != 'image/pjpeg') && ($_FILES['threeImg']['type'] != 'image/png')){
-            
-            @unlink($_FILES['threeImg']['tmp_name']);
-            $imageThreeProblem = true;
-            
-        }
-        if(($_FILES['fourImg']['type'] != 'image/gif') && ($_FILES['fourImg']['type'] != 'image/jpeg') && ($_FILES['fourImg']['type'] != 'image/pjpeg') && ($_FILES['fourImg']['type'] != 'image/png')){
-            
-            @unlink($_FILES['fourImg']['tmp_name']);
-            $imageFourProblem = true;
-            
-        }
-        if(($_FILES['fiveImg']['type'] != 'image/gif') && ($_FILES['fiveImg']['type'] != 'image/jpeg') && ($_FILES['fiveImg']['type'] != 'image/pjpeg') && ($_FILES['fiveImg']['type'] != 'image/png')){
-            
-            @unlink($_FILES['fiveImg']['tmp_name']);
-            $imageFiveProblem = true;
-            
-        }
-        if(($_FILES['sixImg']['type'] != 'image/gif') && ($_FILES['sixImg']['type'] != 'image/jpeg') && ($_FILES['sixImg']['type'] != 'image/pjpeg') && ($_FILES['sixImg']['type'] != 'image/png')){
-            
-            @unlink($_FILES['sixImg']['tmp_name']);
-            $imageSixProblem = true;
-            
-        }
-        echo $imageOneProblem;
-        echo $imageTwoProblem;
-        echo $imageThreeProblem;
-        echo $imageFourProblem;
-        echo $imageFiveProblem;
-        echo $imageSixProblem;
-        echo '</br>';
-        
-        if($_FILES['oneImg']['size'] > 1283000){
-            
-            @unlink($_FILES['oneImg']['tmp_name']);
-            
-            $imageOneProblem = true;
-            
-        }
-        if($_FILES['twoImg']['size'] > 1283000){
-            
-            @unlink($_FILES['twoImg']['tmp_name']);
-            
-            $imageTwoProblem = true;
-            
-        }
-        if($_FILES['threeImg']['size'] > 1283000){
-            
-            @unlink($_FILES['threeImg']['tmp_name']);
-            
-            $imageThreeProblem = true;
-            
-        }
-        if($_FILES['fourImg']['size'] > 1283000){
-            
-            @unlink($_FILES['fourImg']['tmp_name']);
-            
-            $imageFourProblem = true;
-            
-        }
-        if($_FILES['fiveImg']['size'] > 1283000){
-            
-            @unlink($_FILES['fiveImg']['tmp_name']);
-            
-            $imageFiveProblem = true;
-            
-        }
-        if($_FILES['sixImg']['size'] > 1283000){
-            
-            @unlink($_FILES['sixImg']['tmp_name']);
-            
-            $imageSixProblem = true;
-            
-        }
-        
-        echo $imageOneProblem;
-        echo $imageTwoProblem;
-        echo $imageThreeProblem;
-        echo $imageFourProblem;
-        echo $imageFiveProblem;
-        echo $imageSixProblem;
-        echo '</br>';
-        
-        if($imageOneProblem) $imagesDownloaded--;
-        if($imageTwoProblem) $imagesDownloaded--;
-        if($imageThreeProblem) $imagesDownloaded--;
-        if($imageFourProblem) $imagesDownloaded--;
-        if($imageFiveProblem) $imagesDownloaded--;
-        if($imageSixProblem) $imagesDownloaded--;
-        
-        echo $imagesDownloaded;
-        
-        if(!$addOrUpdateProblem && ($imagesDownloaded > 2)){
-            
-            $query = "INSERT INTO goods_data(good_name, good_opisation, good_price) VALUES({$goodName}, {$goodOpisation}, {$goodPrice})";
+            $query = "INSERT INTO goods_data(good_name, good_opisation, good_price) VALUES('$goodName', '$goodOpisation', '$goodPrice')";
             
             $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
             
             if(!$addOrUpdateProblem){
                 
-                $newGoodId;
+                $_SESSION['good_id'] = null;
+                $_SESSION['image_num'] = 1;
                 
-                $query = "SELECT good_id FROM goods_data";
-                
-                $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
-                
-                while($row = mysqli_fetch_array($result)){
-                    
-                    $newGoodId = $row['good_id'];
-                    
-                }
-                
-                $publicQuery = "INSERT INTO goods_images(goods_id, image_way) VALUES({$newGoodId},";
-                
-                if(!$imageOneProblem){
-                    
-                    $image_way = "img/{$_FILES['oneImg']['name']}";
-                    move_uploaded_file($_FILES['oneImg']['tmp_name'], $image_way) or @unlink($image_way);
-                    
-                    $query = "{$publicQuery} {$image_way})";
-                    
-                    $result = mysqli_query($connect, $query) or @unlink($image_way);
-                    
-                }
-                if(!$imageOneProblem){
-                    
-                    $image_way = "img/{$_FILES['twoImg']['name']}";
-                    move_uploaded_file($_FILES['twoImg']['tmp_name'], $image_way) or @unlink($image_way);
-                    
-                    $query = "{$publicQuery} {$image_way})";
-                    
-                    $result = mysqli_query($connect, $query) or @unlink($image_way);
-                    
-                }
-                if(!$imageOneProblem){
-                    
-                    $image_way = "img/{$_FILES['threeImg']['name']}";
-                    move_uploaded_file($_FILES['threeImg']['tmp_name'], $image_way) or @unlink($image_way);
-                    
-                    $query = "{$publicQuery} {$image_way})";
-                    
-                    $result = mysqli_query($connect, $query) or @unlink($image_way);
-                    
-                }
-                if(!$imageOneProblem){
-                    
-                    $image_way = "img/{$_FILES['fourImg']['name']}";
-                    move_uploaded_file($_FILES['fourImg']['tmp_name'], $image_way) or @unlink($image_way);
-                    
-                    $query = "{$publicQuery} {$image_way})";
-                    
-                    $result = mysqli_query($connect, $query) or @unlink($image_way);
-                    
-                }
-                if(!$imageOneProblem){
-                    
-                    $image_way = "img/{$_FILES['fiveImg']['name']}";
-                    move_uploaded_file($_FILES['fiveImg']['tmp_name'], $image_way) or @unlink($image_way);
-                    
-                    $query = "{$publicQuery} {$image_way})";
-                    
-                    $result = mysqli_query($connect, $query) or @unlink($image_way);
-                    
-                }
-                if(!$imageOneProblem){
-                    
-                    $image_way = "img/{$_FILES['sixImg']['name']}";
-                    move_uploaded_file($_FILES['sixImg']['tmp_name'], $image_way) or @unlink($image_way);
-                    
-                    $query = "{$publicQuery} {$image_way})";
-                    
-                    $result = mysqli_query($connect, $query) or @unlink($image_way);
-                    
-                }
+                header('Location: importimages.php');
                 
             }
-            
-        }else{
-            
-            $addOrUpdateProblem = true;
             
         }
         
@@ -343,7 +112,68 @@
 
     if(isset($_POST['changeOld'])){
         
+        $goodName = mysqli_real_escape_string($connect, trim($_POST['goodName']));
+        $goodPrice = mysqli_real_escape_string($connect, trim($_POST['goodPrice']));
+        $goodOpisation = mysqli_real_escape_string($connect, trim($_POST['goodOpisation']));
         
+        if(empty($goodName) || empty($goodPrice) || empty($goodOpisation)){
+            
+            $addOrUpdateProblem = true;
+            
+        }
+        
+        if(!$addOrUpdateProblem){
+            
+            $query = "UPDATE goods_data SET good_name='$goodName', good_opisation='$goodOpisation', good_price='$goodPrice' WHERE good_id='{$_SESSION['good_id']}'";
+            
+            $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
+            
+        }
+        
+    }
+
+    //change aviable if block
+
+    if(isset($_POST['changeAviable'])){
+        
+        $newAviable = 1;
+        
+        $query = "SELECT is_good_aviable FROM goods_data WHERE good_id={$_SESSION['good_id']}";
+        $result = mysqli_query($connect, $query);
+        $row = mysqli_fetch_array($result);
+        
+        if($row['is_good_aviable'] == 1) $newAviable = 0;
+        else $newAviable = 1;
+        
+        $query = "UPDATE goods_data SET is_good_aviable='$newAviable' WHERE good_id='{$_SESSION['good_id']}'";
+        
+        $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
+        
+    }
+
+    //redownload images if block
+
+    if(isset($_POST['redownloadImg'])){
+        
+        $query = "SELECT image_way FROM goods_images WHERE goods_id={$_SESSION['good_id']}";
+        $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
+        
+        while($row = mysqli_fetch_array($result)){
+            
+            @unlink($row['image_way']);
+            
+        }
+        
+        $query = "DELETE FROM goods_images WHERE goods_id={$_SESSION['good_id']}";
+        $result = mysqli_query($connect, $query) or $addOrUpdateProblem = true;
+        
+        if(!$addOrUpdateProblem){
+            
+             $_SESSION['image_num'] = 1;
+             
+             header('Location: importimages.php');
+                
+        }
         
     }
 
@@ -364,7 +194,7 @@
 <div class="create-card">
     <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         
-      <textarea type="pattern" placeholder="описание" class="description-item" rows="0" maxlength="600" name="goodOpisation"><?php if($exchange_good) echo $good_info['good_opisation']; ?></textarea>
+      <textarea type="pattern" placeholder="описание" class="description-item" rows="0" maxlength="600" name="goodOpisation"><?php if($exchange_good) echo $good_info['good_opisation'];?></textarea>
       <?php
         
         
@@ -385,6 +215,7 @@
             
             echo '<input type="submit" class="btn btn-submit" name="changeOld" value="Обновить"/>';
             echo "<input type='submit' class='btn btn-submit' name='changeAviable' value='{$button_value}'/>";
+            echo '<input type="submit" class="btn btn-submit" name="redownloadImg" value="Заного фотогр."/>';
             
         }else{
             
@@ -396,17 +227,9 @@
         
       <?php
         
-        if($isAddingOrUpdating){
+        if($isAddingOrUpdating && $addOrUpdateProblem){
             
-            if($addOrUpdateProblem){
-                
-                echo "Во время добавления товара произошла ошибка";
-                
-            }else{
-                
-                echo "Товар успешно добавлен";
-                
-            }
+             echo "Во время добавления или обновления товара произошла ошибка";  
             
         }
         
@@ -426,8 +249,8 @@
         
       ?>
       
-      <input type="text" placeholder="название" <?php if($exchange_good) echo "value='{$good_info['good_name']}'"; ?> class="txt-item txt-name" name="goodName">
-      <input type="number" placeholder="цена" <?php if($exchange_good) echo "value='{$good_info['good_price']}'"; ?> class="txt-item txt-price" name="goodPrice">
+      <input type="text" placeholder="название" <?php if($exchange_good) echo "value='{$good_info['good_name']}'";?> class="txt-item txt-name" name="goodName">
+      <input type="number" placeholder="цена" <?php if($exchange_good) echo "value='{$good_info['good_price']}'";?> class="txt-item txt-price" name="goodPrice">
         
     </form>
     
