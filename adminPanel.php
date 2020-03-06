@@ -358,7 +358,7 @@
   <link rel="stylesheet" href="owl.carousel.min.css">
   <link rel="stylesheet" href="style/item.css">
   <link rel="stylesheet" href="style/style.css">
-  <title>Document</title>
+  <title>панель импорта</title>
 </head>
 <body>
 <div class="create-card">
@@ -413,16 +413,16 @@
       ?>
       <?php 
         
-        if(!$exchange_good){
+        // if(!$exchange_good){
             
-            echo '<input type="file" class="one-import file-item" name="oneImg">';
-            echo '<input type="file" class="two-import file-item" name="twoImg">';
-            echo '<input type="file" class="three-import file-item" name="threeImg">';
-            echo '<input type="file" class="four-import file-item" name="fourImg">';
-            echo '<input type="file" class="five-import file-item" name="fiveImg">';
-            echo '<input type="file" class="six-import file-item" name="sixImg">';
+        //     echo '<input type="file" class="one-import file-item" name="oneImg">';
+        //     echo '<input type="file" class="two-import file-item" name="twoImg">';
+        //     echo '<input type="file" class="three-import file-item" name="threeImg">';
+        //     echo '<input type="file" class="four-import file-item" name="fourImg">';
+        //     echo '<input type="file" class="five-import file-item" name="fiveImg">';
+        //     echo '<input type="file" class="six-import file-item" name="sixImg">';
             
-        }
+        // }
         
       ?>
       
