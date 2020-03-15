@@ -17,23 +17,23 @@ CREATE TABLE goods_data(
 
 );
 
-ALTER TABLE goods_data DROP COLUMN good_attendance;
+INSERT INTO goods_data(good_name, good_opisation, good_price) VALUES("Носки", "аповпвадпвадп", 100);
 
 CREATE TABLE goods_images(
 
 	image_id INT AUTO_INCREMENT NOT NULL,
     goods_id INT NOT NULL,
     image_way VARCHAR(60) NOT NULL,
-    goods_avatar INT NOT NULL DEFAULT 0,
     
     PRIMARY KEY(image_id),
     FOREIGN KEY (goods_id) REFERENCES goods_data(good_id)
 );
-
+   
+ALTER TABLE goods_data DROP COLUMN good_attendance;
 
 SELECT goods_data.good_name, goods_data.good_price, goods_images.image_way FROM goods_data INNER JOIN goods_images ON(goods_images.goods_avatar = goods_data.good_id);
 
-UPDATE goods_images SET image_way = 'img/fourBB.jpg' WHERE image_id = 3;
+UPDATE goods_images SET image_way = "img/fourBB.jpg" WHERE image_id = 1;
 
 INSERT INTO goods_data(good_name, good_opisation, good_price, good_attendance) VALUES('Водка', 'Водка пива, водка пиво, под конеч корпаратива', 170, 300);
 INSERT INTO goods_images(goods_id, image_way) VALUES(1, 'fourBB.jpg');
